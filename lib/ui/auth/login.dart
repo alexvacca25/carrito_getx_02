@@ -43,11 +43,13 @@ class _LoginState extends State<Login> {
                 children: [
                   IconButton(
                       onPressed: () {
+                        controlu.update()
                         controlu
                             .enviarDatos(controluser.text, controlpassw.text)
                             .then((value) {
                           if (controlu.user!.isNotEmpty == true) {
                             Get.offAllNamed('/productos');
+
                           } else {
                             Get.showSnackbar(const GetSnackBar(
                               title: 'Validacion de Usuarios',
