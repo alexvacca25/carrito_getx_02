@@ -111,6 +111,7 @@ class _AdicionarArticulosState extends State<AdicionarArticulos> {
                   };
 
                   PeticionesArticulo.crearArticulo(catalogo, _image);
+                  Get.offAllNamed(newRouteName)
                 },
                 child: const Text("Guardar Articulo"))
           ],
