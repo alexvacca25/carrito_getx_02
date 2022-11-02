@@ -56,11 +56,26 @@ static Future<void> crearArticulo(Map<String, dynamic> catalogo, foto) async {
         log(doc.data().toString());
         lista.add(Articulo.desdeDoc(doc.data()));
       }
+
+
     });
 
     return lista;
   }
 
+ static Future<List<Articulo>> consultarGral(String id) async {
+    List<Articulo> lista = [];
+    await _db.collection("Usuarios").get().then((respuesta) {
+      for (var doc in respuesta.docs) {
+        log(doc.data().toString());
+        lista.add(Articulo.desdeDoc(doc.data()));
+      }
+
+      
+    });
+
+    return lista;
+  }
 
 
 }
